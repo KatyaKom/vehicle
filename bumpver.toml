@@ -1,0 +1,19 @@
+[bumpver]
+current_version = "v0.1.0"
+version_pattern = "vMAJOR.MINOR.PATCH"
+commit_message = "Bump version {old_version} -> {new_version}"
+commit = true
+tag = true
+push = true
+
+[bumpver.file_patterns]
+"bumpver.toml" = ['^current_version = "{version}"$']
+"vehicle-syntax/vehicle-syntax.cabal" = [
+    '^version:            {pep440_version}$',
+]
+"vehicle/vehicle.cabal" = ['^version:       {pep440_version}$']
+"vehicle-python/pyproject.toml" = ['^version = "{pep440_version}"$']
+"docs-source/conf.py" = [
+    '^release = "{pep440_version}"$',
+    '^version = "{pep440_version}"$'
+]
